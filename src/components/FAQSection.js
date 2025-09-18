@@ -39,36 +39,32 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: "Who can participate in the hackathon?",
-      answer: "The TIRA Hackathon is open to all university students, regardless of their major or technical background. We welcome participants from all disciplines - whether you're studying computer science, business, design, social sciences, or any other field. Teams can be interdisciplinary, and we encourage diverse perspectives!"
+      question: "من يمكنه المشاركة في الهاكاثون؟",
+      answer: "هاكاثون طيرة مفتوح لجميع طلاب الجامعة، بغض النظر عن تخصصهم أو خلفيتهم التقنية. نحن نرحب بالمشاركين من جميع التخصصات - سواء كنت تدرس علوم الحاسوب أو إدارة الأعمال أو التصميم أو العلوم الاجتماعية أو أي مجال آخر. يمكن أن تكون الفرق متعددة التخصصات، ونحن نشجع وجهات النظر المتنوعة!"
     },
     {
-      question: "Do I need to have a team to register?",
-      answer: "No, you can register as an individual! We'll have team formation sessions during the first day where you can meet other participants and form teams based on shared interests and complementary skills. Teams can have 2-5 members, and we encourage mixing different skill sets and backgrounds."
+      question: "هل أحتاج إلى فريق للتسجيل؟",
+      answer: "لا، يمكنك التسجيل كفرد! سيكون لدينا جلسات تكوين فرق خلال اليوم الأول حيث يمكنك مقابلة مشاركين آخرين وتكوين فرق بناءً على الاهتمامات المشتركة والمهارات المتكاملة. يمكن أن تضم الفرق 3-5 مشاركين، ونحن نشجع خلط مجموعات مهارات وخلفيات مختلفة."
     },
     {
-      question: "What should I bring to the hackathon?",
-      answer: "Bring your laptop, chargers, any development tools you prefer, and a positive attitude! We'll provide meals, snacks, Wi-Fi, and workspace. If you have any special hardware or sensors you'd like to use for your project, feel free to bring them. Most importantly, bring your creativity and passion for social impact!"
+      question: "ماذا يجب أن أحضر إلى الهاكاثون؟",
+      answer: "أحضر حاسوبك المحمول والشواحن وأي أدوات تطوير تفضلها وموقف إيجابي! سنوفر الوجبات والوجبات الخفيفة والواي فاي ومساحة العمل. إذا كان لديك أي أجهزة خاصة أو مستشعرات تريد استخدامها في مشروعك، لا تتردد في إحضارها. الأهم من ذلك، أحضر إبداعك وشغفك للتأثير الاجتماعي!"
     },
     {
-      question: "What if I don't have technical skills?",
-      answer: "Perfect! We need people with diverse skills. Non-technical participants bring valuable perspectives on user experience, business strategy, design thinking, domain expertise, and problem identification. Many winning teams have non-technical members who contribute significantly to the project's success and impact."
+      question: "ماذا لو لم تكن لدي مهارات تقنية؟",
+      answer: "ممتاز! نحن نحتاج إلى أشخاص ذوي مهارات متنوعة. المشاركون غير التقنيين يجلبون وجهات نظر قيمة حول تجربة المستخدم واستراتيجية الأعمال والتفكير التصميمي والخبرة في المجال وتحديد المشاكل. العديد من الفرق الفائزة لديها أعضاء غير تقنيين يساهمون بشكل كبير في نجاح المشروع وتأثيره."
     },
     {
-      question: "Are there any costs to participate?",
-      answer: "No, participation is completely free! We provide all meals, snacks, workspace, and materials needed during the hackathon. We also provide certificates, swag, and access to mentors and workshops at no cost to participants."
+      question: "كيف يتم تقييم المشاريع؟",
+      answer: "يتم تقييم المشاريع بناءً على إمكانية التأثير الاجتماعي والابتكار والتنفيذ التقني وجودة العرض والجدوى. تضم لجنتنا خبراء في الصناعة وقادة في مجال التأثير الاجتماعي وأعضاء هيئة تدريس. نحن نعطي أولوية للحلول التي تعالج مشاكل حقيقية ولديها إمكانية للتغيير ذي المعنى."
     },
     {
-      question: "How are projects judged?",
-      answer: "Projects are evaluated based on social impact potential, innovation, technical implementation, presentation quality, and feasibility. Our panel includes industry experts, social impact leaders, and faculty members. We prioritize solutions that address real problems and have potential for meaningful change."
+      question: "هل يمكنني العمل على مشروع موجود؟",
+      answer: "نحن نشجع البدء من نقطة جديدة خلال الهاكاثون لضمان العدالة وزيادة التعلم إلى الحد الأقصى. ومع ذلك، يمكنك البناء على بحوث سابقة واستخدام واجهات برمجة تطبيقات / أطر عمل موجودة والاستفادة من المعرفة المسبقة. المهم هو أن التطوير والابتكار الرئيسي يجب أن يحدث خلال الحدث."
     },
     {
-      question: "Can I work on an existing project?",
-      answer: "We encourage starting fresh during the hackathon to ensure fairness and maximize learning. However, you can build upon previous research, use existing APIs/frameworks, and leverage prior knowledge. The key is that the main development and innovation should happen during the event."
-    },
-    {
-      question: "What happens after the hackathon?",
-      answer: "Winners receive prizes and recognition, but that's just the beginning! We provide ongoing mentorship opportunities, connections to startup incubators, and potential funding pathways for promising projects. Many past participants have turned their hackathon projects into real ventures or research initiatives."
+      question: "ماذا يحدث بعد الهاكاثون؟",
+      answer: "يحصل الفائزون على جوائز وتقدير، لكن هذه مجرد بداية! بما أن هذا هو العام الأول لهاكاثون طيرة، فإن الأفكار المبتكرة التي ستولد هنا قد تصبح مشاريع حقيقية ناجحة وتضيء في السوق. هذا الهاكاثون قد يكون نقطة البداية لمشاريع ستغير المستقبل!"
     }
   ];
 
@@ -83,11 +79,11 @@ const FAQSection = () => {
           animate={inView ? "visible" : "hidden"}
         >
           <motion.h2 className="section-title" variants={itemVariants}>
-            Frequently Asked Questions
+            الأسئلة الشائعة
           </motion.h2>
           
           <motion.p className="faq-subtitle" variants={itemVariants}>
-            Got questions? We've got answers! Still need help? Contact us anytime.
+            لديك أسئلة؟ لدينا الإجابات! ما زلت تحتاج مساعدة؟ تواصل معنا في أي وقت.
           </motion.p>
           
           <div className="faq-list">
@@ -135,13 +131,34 @@ const FAQSection = () => {
             <div className="contact-card">
               <div className="contact-icon">💬</div>
               <div className="contact-text">
-                <h4>Still have questions?</h4>
-                <p>Feel free to reach out to our organizing team</p>
-                <a href="mailto:tira.hackathon@university.edu" className="contact-email">
-                  tira.hackathon@university.edu
+                <h4>ما زلت لديك أسئلة؟</h4>
+                <p>لا تتردد في التواصل مع فريق التنظيم</p>
+                <a href="mailto:tirahackathon@gmail.com" className="contact-email">
+                  tirahackathon@gmail.com
                 </a>
               </div>
             </div>
+          </motion.div>
+          
+          {/* Gravnix promotional banner */}
+          <motion.div className="gravnix-branding" variants={itemVariants}>
+            <motion.div
+              className="gravnix-banner"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => window.open('https://gravnix.com', '_blank')}
+            >
+              <div className="banner-content">
+                <div className="banner-left">
+                  <span className="banner-tagline">Powered by</span>
+                  <span className="banner-brand">Gravnix</span>
+                </div>
+                <div className="banner-right">
+                  <span className="banner-cta">Visit gravnix.com</span>
+                  <span className="banner-arrow">→</span>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

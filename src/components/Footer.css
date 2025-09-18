@@ -214,40 +214,6 @@
   animation: heartbeat 2s ease-in-out infinite;
 }
 
-.developer-credit {
-  margin-top: 0.5rem !important;
-  font-size: 0.85rem !important;
-  opacity: 0.8;
-}
-
-.developer-link {
-  color: var(--highlight-emerald) !important;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.developer-link:hover {
-  color: var(--accent-coral) !important;
-  text-decoration: none;
-  transform: translateY(-1px);
-}
-
-.developer-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--accent-coral);
-  transition: width 0.3s ease;
-}
-
-.developer-link:hover::after {
-  width: 100%;
-}
 
 @keyframes heartbeat {
   0%, 100% { transform: scale(1); }

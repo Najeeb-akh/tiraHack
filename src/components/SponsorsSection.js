@@ -44,10 +44,53 @@ const SponsorsSection = () => {
     }
   };
 
-  // Placeholder sponsors - you can replace with actual sponsor data
+  // Sponsors data with package tiers
   const sponsors = [
-    // { name: 'Sponsor 1', logo: '/path/to/logo1.png', link: 'https://sponsor1.com' },
-    // { name: 'Sponsor 2', logo: '/path/to/logo2.png', link: 'https://sponsor2.com' },
+    // Gold package
+    { 
+      name: 'مطبعة الطيرة', 
+      logo: '/logo.png', 
+      tier: 'gold',
+      package: 'Gold Package'
+    },
+    // Silver package
+    { 
+      name: 'Be', 
+      logo: '/be_logo.png', 
+      tier: 'silver',
+      package: 'Silver Package'
+    },
+    { 
+      name: 'Boost', 
+      logo: '/boost_logo.jpeg', 
+      tier: 'silver',
+      package: 'Silver Package'
+    },
+    { 
+      name: 'Sham', 
+      logo: '/logo.png', 
+      tier: 'silver',
+      package: 'Silver Package'
+    },
+    // Bronze package
+    { 
+      name: 'كمبيوتر الاقصى', 
+      logo: '/logo.png', 
+      tier: 'bronze',
+      package: 'Bronze Package'
+    },
+    { 
+      name: 'مجوهرات ريان', 
+      logo: '/rayan_jwelery.jpg', 
+      tier: 'bronze',
+      package: 'Bronze Package'
+    },
+    { 
+      name: 'اخوان سمارة', 
+      logo: '/samara_logo.pdf', 
+      tier: 'bronze',
+      package: 'Bronze Package'
+    },
   ];
 
   return (
@@ -61,37 +104,35 @@ const SponsorsSection = () => {
           animate={inView ? "visible" : "hidden"}
         >
           <motion.h2 className="section-title" variants={itemVariants}>
-            Our Valued Sponsors
+            رعاتنا الكرام
           </motion.h2>
           <motion.p className="sponsors-subtitle" variants={itemVariants}>
-            Thank you to the organizations making Givehack possible!
+            شكراً للمنظمات التي تجعل Givehack ممكناً!
           </motion.p>
 
           {sponsors.length > 0 ? (
             <div className="sponsors-grid">
               {sponsors.map((sponsor, index) => (
-                <motion.a
+                <motion.div
                   key={index}
-                  href={sponsor.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="sponsor-card"
+                  className={`sponsor-card sponsor-${sponsor.tier}`}
                   variants={itemVariants}
                   whileHover={{ y: -8 }}
                 >
-                  <div className="sponsor-logo-circle">
+                  <div className={`sponsor-logo-circle sponsor-circle-${sponsor.tier}`}>
                     <img src={sponsor.logo} alt={sponsor.name} className="sponsor-logo" />
                   </div>
                   <h3 className="sponsor-name">{sponsor.name}</h3>
-                </motion.a>
+                  <p className="sponsor-package">{sponsor.package}</p>
+                </motion.div>
               ))}
             </div>
           ) : (
             <motion.div className="sponsors-coming-soon" variants={itemVariants}>
               <div className="coming-soon-icon">🤝</div>
-              <h3>Sponsors Coming Soon!</h3>
-              <p>We are actively seeking partners who share our vision for social change. Interested in supporting Givehack?</p>
-              <a href="mailto:contact@givehack.com" className="cta-button">Become a Sponsor</a>
+              <h3>الرعاة قريباً!</h3>
+              <p>نحن نبحث بنشاط عن شركاء يشاركوننا رؤيتنا للتغيير الاجتماعي. مهتم بدعم Givehack؟</p>
+              <a href="mailto:contact@givehack.com" className="cta-button">كن راعياً</a>
             </motion.div>
           )}
         </motion.div>

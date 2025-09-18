@@ -173,6 +173,116 @@
   text-decoration: none;
 }
 
+/* Gravnix promotional banner styles */
+.gravnix-branding {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.gravnix-banner {
+  background: linear-gradient(135deg, #8B8FF0, #FFB3B3);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 20px 40px;
+  box-shadow: 
+    0 8px 32px rgba(139, 143, 240, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 600px;
+  min-height: 80px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.gravnix-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.gravnix-banner:hover::before {
+  left: 100%;
+}
+
+.gravnix-banner:hover {
+  background: linear-gradient(135deg, #9A9FF5, #FFC4C4);
+  box-shadow: 
+    0 12px 40px rgba(139, 143, 240, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.banner-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.banner-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.banner-tagline {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0;
+}
+
+.banner-brand {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  line-height: 1;
+}
+
+.banner-cta {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  margin: 0;
+}
+
+.banner-arrow {
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+  margin: 0;
+}
+
+.gravnix-banner:hover .banner-arrow {
+  transform: translateX(4px);
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .faq-question {
@@ -209,6 +319,28 @@
   }
   
   .contact-text p {
+    font-size: 1rem;
+  }
+  
+  .gravnix-banner {
+    min-width: 500px;
+    min-height: 70px;
+    padding: 15px 30px;
+  }
+  
+  .banner-tagline {
+    font-size: 0.8rem;
+  }
+  
+  .banner-brand {
+    font-size: 1.5rem;
+  }
+  
+  .banner-cta {
+    font-size: 0.9rem;
+  }
+  
+  .banner-arrow {
     font-size: 1rem;
   }
 }
@@ -252,5 +384,27 @@
   .contact-email {
     padding: 10px 20px;
     font-size: 0.95rem;
+  }
+  
+  .gravnix-banner {
+    min-width: 400px;
+    min-height: 60px;
+    padding: 12px 25px;
+  }
+  
+  .banner-tagline {
+    font-size: 0.7rem;
+  }
+  
+  .banner-brand {
+    font-size: 1.3rem;
+  }
+  
+  .banner-cta {
+    font-size: 0.8rem;
+  }
+  
+  .banner-arrow {
+    font-size: 0.9rem;
   }
 }

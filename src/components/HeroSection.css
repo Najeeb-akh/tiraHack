@@ -4,55 +4,15 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 50%, #ffffff 100%);
+  background-color: #ffffff;
 }
 
 .hero-section::before {
-  content: '';
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background-image: 
-    radial-gradient(circle 1.5px, #3b82f6 100%, transparent 100%),
-    radial-gradient(circle 1px, #6366f1 100%, transparent 100%),
-    radial-gradient(circle 1.2px, #8b5cf6 100%, transparent 100%),
-    radial-gradient(circle 0.8px, #a855f7 100%, transparent 100%);
-  background-size: 25px 25px, 35px 35px, 30px 30px, 20px 20px;
-  background-position: 0 0, 12px 18px, 25px 8px, 8px 25px;
-  opacity: 0.4;
-  animation: particleWaveFlow1 15s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
-  mask: 
-    radial-gradient(ellipse 200% 100% at 50% 30%, black 0%, transparent 70%),
-    radial-gradient(ellipse 180% 80% at 70% 60%, black 0%, transparent 65%);
-  mask-composite: add;
+  content: none;
 }
 
 .hero-section::after {
-  content: '';
-  position: absolute;
-  top: -30%;
-  left: -10%;
-  width: 120%;
-  height: 160%;
-  background-image: 
-    radial-gradient(circle 1.8px, #6366f1 100%, transparent 100%),
-    radial-gradient(circle 1.3px, #8b5cf6 100%, transparent 100%),
-    radial-gradient(circle 1px, #3b82f6 100%, transparent 100%),
-    radial-gradient(circle 1.5px, #a855f7 100%, transparent 100%);
-  background-size: 40px 40px, 28px 28px, 32px 32px, 24px 24px;
-  background-position: 20px 20px, 14px 35px, 35px 10px, 5px 40px;
-  opacity: 0.35;
-  animation: particleWaveFlow2 18s ease-in-out infinite reverse;
-  pointer-events: none;
-  z-index: 1;
-  mask: 
-    radial-gradient(ellipse 150% 120% at 60% 70%, black 0%, transparent 60%),
-    radial-gradient(ellipse 180% 90% at 40% 40%, black 0%, transparent 65%);
-  mask-composite: add;
+  content: none;
 }
 
 .hero-background {
@@ -64,6 +24,27 @@
   z-index: 2;
 }
 
+.wave-dots-container {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.wave-dots-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.4);
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  filter: none;
+}
+
 .hero-background::before {
   content: '';
   position: absolute;
@@ -71,108 +52,15 @@
   left: -30%;
   width: 160%;
   height: 180%;
-  background-image: 
-    radial-gradient(circle 2px, #3b82f6 100%, transparent 100%),
-    radial-gradient(circle 1.4px, #6366f1 100%, transparent 100%),
-    radial-gradient(circle 1.1px, #8b5cf6 100%, transparent 100%),
-    radial-gradient(circle 1.6px, #a855f7 100%, transparent 100%);
-  background-size: 45px 45px, 38px 38px, 22px 22px, 50px 50px;
-  background-position: 22px 22px, 19px 5px, 11px 30px, 35px 15px;
-  opacity: 0.25;
-  animation: particleWaveFlow3 22s ease-in-out infinite;
+  background-image: none;
+  opacity: 0;
+  animation: none;
   pointer-events: none;
   z-index: 0;
-  mask: 
-    radial-gradient(ellipse 120% 80% at 30% 50%, black 0%, transparent 70%),
-    radial-gradient(ellipse 140% 90% at 80% 30%, black 0%, transparent 65%);
-  mask-composite: add;
+  mask: none;
 }
 
-.hero-illustration {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
 
-.floating-icon {
-  position: absolute;
-  font-size: 3rem;
-  opacity: 0.12;
-  animation: float 6s ease-in-out infinite;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-}
-
-.floating-icon.heart {
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.floating-icon.lightbulb {
-  top: 15%;
-  right: 15%;
-  animation-delay: -2s;
-}
-
-.floating-icon.hands {
-  bottom: 30%;
-  left: 20%;
-  animation-delay: -4s;
-}
-
-.floating-icon.leaf {
-  top: 50%;
-  right: 10%;
-  animation-delay: -1s;
-}
-
-.floating-icon.tech {
-  bottom: 20%;
-  right: 25%;
-  animation-delay: -3s;
-}
-
-.floating-icon.people {
-  top: 70%;
-  left: 15%;
-  animation-delay: -5s;
-}
-
-.floating-icon.health {
-  top: 25%;
-  left: 12%;
-  animation-delay: -6s;
-}
-
-.floating-icon.education {
-  bottom: 40%;
-  right: 18%;
-  animation-delay: -1.8s;
-}
-
-.floating-icon.recycle {
-  top: 45%;
-  left: 8%;
-  animation-delay: -3.2s;
-}
-
-.floating-icon.home {
-  bottom: 55%;
-  right: 12%;
-  animation-delay: -2.7s;
-}
-
-.floating-icon.diversity {
-  bottom: 35%;
-  left: 22%;
-  animation-delay: -3.8s;
-}
-
-.floating-icon.innovation {
-  top: 65%;
-  right: 20%;
-  animation-delay: -1.2s;
-}
 
 .hero-content {
   text-align: center;
@@ -234,10 +122,69 @@
   font-style: italic;
 }
 
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: auto;
+}
+
+.gradient-circle {
+  position: absolute;
+  width: 1200px;
+  height: 1200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, 
+    rgba(99, 102, 241, 0.15) 0%, 
+    rgba(168, 85, 247, 0.12) 15%, 
+    rgba(236, 72, 153, 0.09) 30%, 
+    rgba(251, 146, 60, 0.06) 45%, 
+    rgba(99, 102, 241, 0.04) 60%, 
+    rgba(168, 85, 247, 0.02) 75%, 
+    rgba(236, 72, 153, 0.01) 90%, 
+    transparent 100%);
+  animation: gradientPulse 8s ease-in-out infinite;
+  z-index: -1;
+}
+
+.main-logo {
+  max-width: 600px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: auto;
+}
+
+.main-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.3));
+}
+
+.main-logo:active {
+  transform: scale(0.95);
+}
+
+
 .countdown-timer {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  margin-top: 8rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
 }
@@ -328,8 +275,24 @@
     font-size: 1.1rem;
   }
   
+  .hero-logo {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .main-logo {
+    max-width: 450px;
+    max-height: 225px;
+  }
+  
+  .gradient-circle {
+    width: 900px;
+    height: 900px;
+  }
+  
   .countdown-timer {
     gap: 1rem;
+    margin-top: 6rem;
   }
   
   .countdown-number {
@@ -338,8 +301,11 @@
     font-size: 2.5rem;
   }
   
-  .floating-icon {
-    font-size: 2rem;
+  
+  .wave-dots-svg {
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1.7);
   }
 }
 
@@ -348,14 +314,86 @@
     font-size: 2.2rem;
   }
   
+  .hero-logo {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .main-logo {
+    max-width: 350px;
+    max-height: 175px;
+  }
+  
+  .gradient-circle {
+    width: 700px;
+    height: 700px;
+  }
+  
   .countdown-timer {
     gap: 0.5rem;
+    margin-top: 4rem;
   }
   
   .countdown-number {
     width: 70px;
     height: 70px;
     font-size: 2rem;
+  }
+  
+  .wave-dots-svg {
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(2.0);
+  }
+}
+
+/* Gradient circle animation */
+@keyframes gradientPulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Confetti styles */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.confetti-item {
+  position: fixed;
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+  transform-origin: center;
+}
+
+@keyframes confettiFloat {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.1) rotate(120deg);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(0.9) rotate(240deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(0.8) rotate(360deg);
+    opacity: 0;
   }
 }
 
@@ -419,3 +457,5 @@
     background-position: 37px 47px, 34px 30px, 26px 55px, 50px 40px;
   }
 }
+
+

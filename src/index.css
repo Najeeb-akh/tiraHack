@@ -23,6 +23,8 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  direction: rtl;
+  text-align: right;
 }
 
 body::before {
@@ -58,11 +60,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-align: center;
   margin-bottom: 3rem;
   color: var(--primary-indigo);
   position: relative;
+  font-family: 'Amiri', 'Cairo', 'Nunito', sans-serif;
+  font-weight: 700;
 }
 
 .section-title::after {
@@ -186,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .section-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   
   .container {

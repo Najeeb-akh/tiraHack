@@ -9,6 +9,48 @@ const ScheduleSection = () => {
     triggerOnce: true
   });
 
+  const generateCalendarEvent = () => {
+    // Event details
+    const event = {
+      title: 'TiraHack 2025 - هاكاثون الطيرة',
+      description: 'انضموا إلينا في هاكاثون طيرة 2025، حيث يلتقي المبدعون والمبرمجون والمصممون وروّاد الأعمال لتطوير حلول مبتكرة تخدم المجتمع.',
+      location: 'Tira',
+      startDate: '20251011T080000', // October 11, 2025 at 8:00 AM
+      endDate: '20251011T193000',   // October 11, 2025 at 7:30 PM
+      uid: 'tirahack-2025@tirahack.com'
+    };
+
+    // Create .ics file content
+    const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//TiraHack//TiraHack 2025//EN
+BEGIN:VEVENT
+UID:${event.uid}
+DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z
+DTSTART:${event.startDate}
+DTEND:${event.endDate}
+SUMMARY:${event.title}
+DESCRIPTION:${event.description}
+LOCATION:${event.location}
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR`;
+
+    return icsContent;
+  };
+
+  const handleAddToCalendar = () => {
+    const icsContent = generateCalendarEvent();
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'TiraHack-2025.ics';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -34,18 +76,19 @@ const ScheduleSection = () => {
 
   const scheduleData = [
     {
-      day: "One Day",
-      title: "Innovation Day",
-      date: "March 15, 2025",
+      day: "يوم واحد",
+      title: "",
+      date: "11 أكتوبر 2025",
       events: [
-        { time: "??:?? AM", event: "Registration & Welcome", icon: "🎯" },
-        { time: "??:?? AM", event: "Opening Ceremony", icon: "🎤" },
-        { time: "??:?? AM", event: "Keynote: Tech for Good", icon: "💡" },
-        { time: "??:?? PM", event: "Team Formation & Ideation", icon: "🤝" },
-        { time: "??:?? PM", event: "Hack Time & Development", icon: "💻" },
-        { time: "??:?? PM", event: "Mentorship & Workshops", icon: "👥" },
-        { time: "??:?? PM", event: "Project Presentations", icon: "🎤" },
-        { time: "??:?? PM", event: "Awards & Closing", icon: "🏆" }
+        { time: "08:30-09:00", event: "استقبال وفطور + تسجيل وتوزيع بطاقات أسماء", icon: "☕" },
+        { time: "09:00-09:20", event: "افتتاحية الحدث بالقاعة", icon: "🎤" },
+        { time: "09:20", event: "بدء العمل", icon: "🚀" },
+        { time: "11:00-11:45", event: "ورشة 1 (سيتم الإعلان عنها لاحقاً)", icon: "📚" },
+        { time: "13:00-13:45", event: "استراحة غداء", icon: "🍽️" },
+        { time: "15:00-15:45", event: "ورشة 2 (سيتم الإعلان عنها لاحقاً)", icon: "📚" },
+        { time: "17:00-18:30", event: "استمرار العمل", icon: "💻" },
+        { time: "18:30", event: "لجنة تحكيم أولية", icon: "⚖️" },
+        { time: "19:30", event: "إعلان الفائزين + اختتام", icon: "🏆" }
       ],
       color: "var(--primary-indigo)"
     }
@@ -62,35 +105,10 @@ const ScheduleSection = () => {
           animate={inView ? "visible" : "hidden"}
         >
           <motion.h2 className="section-title" variants={itemVariants}>
-            Event Schedule
+            📅 جدول الهاكاثون
           </motion.h2>
           
-          <motion.div className="schedule-announcement" variants={itemVariants}>
-            <div className="announcement-card">
-              <div className="announcement-icon">📅</div>
-              <div className="announcement-content">
-                <h3>Detailed Schedule Coming Soon!</h3>
-                <p>We're finalizing an exciting one-day program packed with innovation, collaboration, and impact. The complete schedule will be announced closer to the event date.</p>
-              </div>
-            </div>
-          </motion.div>
-          
-          <div className="timeline timeline-preview">
-            <motion.div 
-              className="timeline-overlay-message"
-              variants={itemVariants}
-              whileHover={{ 
-                scale: 1.05,
-                y: -5,
-                transition: { duration: 0.3 }
-              }}
-            >
-              <div className="overlay-icon">📅✨</div>
-              <h3 className="overlay-title">Detailed Schedule Coming Soon!</h3>
-              <p className="overlay-description">
-                We're finalizing an exciting one-day program packed with innovation, collaboration, and impact. The complete schedule will be announced closer to the event date.
-              </p>
-            </motion.div>
+          <div className="timeline">
             {scheduleData.map((day, index) => (
               <motion.div 
                 key={index} 
@@ -121,6 +139,20 @@ const ScheduleSection = () => {
               </motion.div>
             ))}
           </div>
+          
+          <motion.div className="schedule-actions" variants={itemVariants}>
+            <div className="cta-content">
+              <h3 className="cta-title">لا تنسى الموعد!</h3>
+              <p className="cta-description">أضف الهاكاثون إلى تقويمك لتتذكر الموعد المهم</p>
+            </div>
+            <button 
+              className="calendar-btn"
+              onClick={handleAddToCalendar}
+            >
+              📅 أضف إلى التقويم
+            </button>
+            <p className="schedule-note">📱 جميع التحديثات المباشرة ستتم مشاركتها في مجموعة الواتساب</p>
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -3,6 +3,7 @@
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  padding-bottom: 4rem;
 }
 
 .about-section::before {
@@ -27,36 +28,145 @@
   z-index: 1;
 }
 
-.about-grid {
+.futuristic-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+  height: 800px;
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
   align-items: center;
 }
 
+.center-visual {
+  grid-column: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.combined-content {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100%;
+  justify-content: center;
+}
+
+.welcome-message {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 550px;
+  width: 100%;
+  box-shadow: 
+    0 8px 32px rgba(75, 79, 229, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-effect {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(255, 255, 255, 0.05) 50%, 
+    rgba(255, 255, 255, 0.1) 100%);
+}
+
+.welcome-message::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(75, 79, 229, 0.1) 0%, 
+    rgba(107, 70, 193, 0.05) 50%, 
+    rgba(139, 92, 246, 0.1) 100%);
+  z-index: 0;
+}
+
+.welcome-message h3 {
+  color: var(--primary-indigo);
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Amiri', 'Cairo', 'Nunito', sans-serif;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.3;
+}
+
+.welcome-message p {
+  color: var(--text-charcoal);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-family: 'Cairo', 'Nunito', sans-serif;
+}
+
 .about-card {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(15px);
-  border-radius: 25px;
-  padding: 3rem;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(75, 79, 229, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 550px;
+  width: 100%;
+  box-shadow: 
+    0 8px 32px rgba(75, 79, 229, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(75, 79, 229, 0.1) 0%, 
+    rgba(107, 70, 193, 0.05) 50%, 
+    rgba(139, 92, 246, 0.1) 100%);
+  z-index: 0;
 }
 
 .about-card h3 {
   color: var(--primary-indigo);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-family: 'Nunito', sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Amiri', 'Cairo', 'Nunito', sans-serif;
   font-weight: 700;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.3;
 }
 
 .about-card p {
   color: var(--text-charcoal);
   font-size: 1.1rem;
   line-height: 1.8;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   opacity: 0.9;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-family: 'Cairo', 'Nunito', sans-serif;
 }
 
 .impact-stats {
@@ -64,7 +174,9 @@
   justify-content: space-around;
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 2px solid rgba(75, 79, 229, 0.1);
+  border-top: 2px solid rgba(75, 79, 229, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
 .stat-item {
@@ -73,17 +185,19 @@
 
 .stat-number {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--accent-coral);
   font-family: 'Nunito', sans-serif;
   margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .stat-label {
   font-size: 0.9rem;
   color: var(--text-charcoal);
-  font-weight: 600;
-  opacity: 0.7;
+  font-weight: 500;
+  opacity: 0.8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .about-visual {
@@ -315,26 +429,110 @@
 }
 
 @media (max-width: 768px) {
-  .about-grid {
+  .futuristic-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    height: auto;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .center-visual {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 1rem 0;
+  }
+  
+  .combined-content {
+    grid-column: 1;
+    grid-row: 2;
+    gap: 1.5rem;
+  }
+  
+  .welcome-message {
+    padding: 1.5rem;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .welcome-message h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-message p {
+    font-size: 1rem;
+    line-height: 1.7;
   }
   
   .about-card {
     padding: 2rem;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .about-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
   }
   
   .impact-stats {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+  
+  /* Central visual mobile adjustments */
+  .hackathon-journey-circle {
+    transform: scale(0.8);
+  }
+  
+  .journey-step {
+    margin: 0.5rem;
+  }
+  
+  .step-circle {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .step-emoji {
+    font-size: 1.2rem;
+  }
+  
+  .step-label {
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+  }
+  
+  .journey-center {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .center-text {
+    font-size: 0.7rem;
   }
   
   .visual-container {
-    height: 300px;
+    height: 250px;
   }
   
   .collaboration-icons {
-    width: 250px;
+    width: 200px;
     height: 150px;
   }
   
@@ -353,6 +551,27 @@
 }
 
 @media (max-width: 480px) {
+  .futuristic-grid {
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .combined-content {
+    gap: 1rem;
+  }
+  
+  .welcome-message {
+    padding: 1rem;
+  }
+  
+  .welcome-message h3 {
+    font-size: 1.2rem;
+  }
+  
+  .welcome-message p {
+    font-size: 0.95rem;
+  }
+  
   .about-card {
     padding: 1.5rem;
   }
@@ -362,10 +581,27 @@
   }
   
   .about-card p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .hackathon-journey-circle {
+    transform: scale(0.7);
+  }
+  
+  .visual-container {
+    height: 200px;
   }
   
   .stat-number {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .impact-stats {
+    flex-direction: column;
+    gap: 1rem;
   }
 }

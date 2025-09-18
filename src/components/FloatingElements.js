@@ -25,6 +25,7 @@ const FloatingElements = () => {
     { icon: '💻', bottom: '70%', right: '15%', delay: -4.2, size: '2rem' },
   ];
 
+
   return (
     <div className="floating-elements-container">
       {elements.map((element, index) => (

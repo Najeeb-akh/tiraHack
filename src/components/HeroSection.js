@@ -10,9 +10,12 @@ const HeroSection = () => {
     seconds: 0
   });
 
+  const [confetti, setConfetti] = useState([]);
+  const [showConfetti, setShowConfetti] = useState(false);
+
   useEffect(() => {
-    // Set hackathon date (one-day event: October 12, 2025 at 8:00 AM)
-    const hackathonDate = new Date('2025-10-12T08:00:00').getTime();
+    // Set hackathon date (one-day event: October 11, 2025 at 8:00 AM)
+    const hackathonDate = new Date('2025-10-11T08:00:00').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -30,6 +33,49 @@ const HeroSection = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  const hackathonEmojis = ['🚀', '💻', '⚡', '🎯', '🏆', '💡', '🔥', '⭐', '🎉', '💎', '🌟', '🎊', '💫', '🎈', '🎁', '🏅', '🎖️', '🥇', '🎪', '🎨'];
+
+  const generateConfetti = () => {
+    const newConfetti = [];
+    const centerX = window.innerWidth / 2;
+    
+    for (let i = 0; i < 50; i++) {
+      // Start from center top with some spread
+      const startX = centerX + (Math.random() - 0.5) * 400; // Spread ±200px from center
+      // Start from above the screen
+      const startY = -50;
+      // End at random position below the screen with more spread
+      const endX = startX + (Math.random() - 0.5) * 300; // More horizontal drift
+      const endY = window.innerHeight + 100;
+      
+      newConfetti.push({
+        id: i,
+        emoji: hackathonEmojis[Math.floor(Math.random() * hackathonEmojis.length)],
+        startX: startX,
+        startY: startY,
+        endX: endX,
+        endY: endY,
+        rotation: Math.random() * 360,
+        scale: Math.random() * 0.5 + 0.5,
+        duration: Math.random() * 3 + 2 // 2-5 seconds
+      });
+    }
+    setConfetti(newConfetti);
+    setShowConfetti(true);
+    
+    // Hide confetti after 10 seconds
+    setTimeout(() => {
+      setShowConfetti(false);
+    }, 10000);
+  };
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('Logo clicked!'); // Debug log
+    generateConfetti();
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -57,18 +103,8 @@ const HeroSection = () => {
   return (
     <section className="hero-section">
       <div className="hero-background">
-        <div className="hero-illustration">
-          <div className="floating-icon heart">💝</div>
-          <div className="floating-icon lightbulb">💡</div>
-          <div className="floating-icon hands">🤝</div>
-          <div className="floating-icon leaf">🌱</div>
-          <div className="floating-icon tech">⚡</div>
-          <div className="floating-icon people">👥</div>
-          <div className="floating-icon health">🏥</div>
-          <div className="floating-icon education">🎓</div>
-          <div className="floating-icon recycle">♻️</div>
-          <div className="floating-icon home">🏠</div>
-          <div className="floating-icon innovation">🚀</div>
+        <div className="wave-dots-container">
+          <img src="/wave-dots.svg" alt="Futuristic wave dots" className="wave-dots-svg" />
         </div>
       </div>
       
@@ -79,53 +115,83 @@ const HeroSection = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.h1 className="hero-title" variants={itemVariants}>
-            Givehack
-          </motion.h1>
-          
-          <motion.h2 className="hero-secondary-title" variants={itemVariants}>
-            TIRA Hackathon 2025
-          </motion.h2>
-          
-          <motion.p className="hero-subtitle" variants={itemVariants}>
-            Technology. Compassion. Impact.
-          </motion.p>
-          
-          <motion.p className="hero-description" variants={itemVariants}>
-            Innovation for Social Change
-          </motion.p>
+          <motion.div 
+            className="hero-logo" 
+            variants={itemVariants}
+            onClick={handleLogoClick}
+            onTouchStart={handleLogoClick}
+            style={{ cursor: 'pointer' }}
+          >
+            <div className="gradient-circle"></div>
+            <img 
+              src="/logo black.svg" 
+              alt="هاكاثون الطيرة" 
+              className="main-logo" 
+            />
+          </motion.div>
           
           <motion.div className="countdown-timer" variants={itemVariants}>
             <div className="countdown-item">
-              <div className="countdown-number">{timeLeft.days}</div>
-              <div className="countdown-label">Days</div>
-            </div>
-            <div className="countdown-item">
-              <div className="countdown-number">{timeLeft.hours}</div>
-              <div className="countdown-label">Hours</div>
+              <div className="countdown-number">{timeLeft.seconds}</div>
+              <div className="countdown-label">ثوان</div>
             </div>
             <div className="countdown-item">
               <div className="countdown-number">{timeLeft.minutes}</div>
-              <div className="countdown-label">Minutes</div>
+              <div className="countdown-label">دقائق</div>
             </div>
             <div className="countdown-item">
-              <div className="countdown-number">{timeLeft.seconds}</div>
-              <div className="countdown-label">Seconds</div>
+              <div className="countdown-number">{timeLeft.hours}</div>
+              <div className="countdown-label">ساعات</div>
+            </div>
+            <div className="countdown-item">
+              <div className="countdown-number">{timeLeft.days}</div>
+              <div className="countdown-label">أيام</div>
             </div>
           </motion.div>
           
           <motion.div className="hero-cta" variants={itemVariants}>
             <a 
-              href="https://forms.google.com" 
+              href="https://forms.gle/DMAZ4LU6XizMqmacA" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-primary hero-btn"
             >
-              Register Now
+سجل الآن
             </a>
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Confetti Effect */}
+      {showConfetti && (
+        <div className="confetti-container">
+          {confetti.map((item) => (
+            <motion.div
+              key={item.id}
+              className="confetti-item"
+              initial={{
+                x: item.startX,
+                y: item.startY,
+                rotate: item.rotation,
+                scale: item.scale,
+                opacity: 1
+              }}
+              animate={{
+                x: item.endX,
+                y: item.endY,
+                rotate: item.rotation + 360,
+                opacity: 0
+              }}
+              transition={{
+                duration: item.duration,
+                ease: "easeOut"
+              }}
+            >
+              {item.emoji}
+            </motion.div>
+          ))}
+        </div>
+      )}
     </section>
   );
 };

@@ -35,34 +35,48 @@ const ThemesSection = () => {
 
   const themes = [
     {
-      title: "Education",
-      icon: "📚",
-      description: "Innovative learning solutions, educational accessibility, and skill development platforms",
-      examples: ["E-learning platforms", "Educational games", "Accessibility tools", "Skill assessment"],
+      title: "دعم الجيل الذهبي",
+      icon: "👴",
+      description: "تطبيقات تربط الشباب بالجيل الذهبي لخدمات التوصيل والتطوع، مع التركيز على دعم كبار السن",
+      examples: [
+        "تطبيق يربط شباب مع رخصة قيادة والجيل الذهبي لهدف التوصيلات",
+        "تطبيق يركز الاماكن التطوعية المتاحة للجيل الذهبي"
+      ],
       color: "var(--primary-indigo)",
       gradient: "linear-gradient(135deg, #4B4FE5 0%, #7C3AED 100%)"
     },
     {
-      title: "Health & Wellness",
-      icon: "🏥",
-      description: "Healthcare innovation, mental health support, and wellness technology solutions",
-      examples: ["Telemedicine apps", "Mental health tools", "Fitness tracking", "Health monitoring"],
+      title: "المشاركة المجتمعية",
+      icon: "🤝",
+      description: "حلول لتعزيز الانتماء والعطاء المجتمعي، مع التركيز على إطار شبابي تطوعي متطور",
+      examples: [
+        "نقص اطر شبابية تطوعية",
+        "حل لتعزيز الانتماء والعطاء للمشاركة المجتمعية بالبلد"
+      ],
       color: "var(--accent-coral)",
       gradient: "linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%)"
     },
     {
-      title: "Environment",
+      title: "البيئة والاستدامة",
       icon: "🌱",
-      description: "Sustainability solutions, climate action, and environmental conservation projects",
-      examples: ["Carbon tracking", "Waste reduction", "Renewable energy", "Conservation apps"],
+      description: "مشاريع بيئية مستدامة تركز على الحفاظ على البيئة وتطوير حلول صديقة للطبيعة",
+      examples: [
+        "تطبيق لتتبع البصمة الكربونية الشخصية والمجتمعية",
+        "منصة لإدارة النفايات وإعادة التدوير",
+        "نظام مراقبة جودة الهواء والماء في المدن"
+      ],
       color: "var(--highlight-emerald)",
       gradient: "linear-gradient(135deg, #28C76F 0%, #48BB78 100%)"
     },
     {
-      title: "Social Empowerment",
-      icon: "🤝",
-      description: "Community building, social justice, inclusion, and empowerment initiatives",
-      examples: ["Community platforms", "Volunteer matching", "Social impact tracking", "Advocacy tools"],
+      title: "التربية والتعليم",
+      icon: "📚",
+      description: "حلول تعليمية مبتكرة تركز على تطوير المناهج والطرق التعليمية الحديثة",
+      examples: [
+        "منصة تعليمية تفاعلية باللغة العربية",
+        "تطبيق ألعاب تعليمية للأطفال والمراهقين",
+        "نظام تقييم وتطوير المهارات الشخصية"
+      ],
       color: "var(--primary-indigo)",
       gradient: "linear-gradient(135deg, #6B46C1 0%, #8B5CF6 100%)"
     }
@@ -79,11 +93,11 @@ const ThemesSection = () => {
           animate={inView ? "visible" : "hidden"}
         >
           <motion.h2 className="section-title" variants={cardVariants}>
-            Hackathon Themes
+            موضوعات الهاكاثون
           </motion.h2>
           
           <motion.p className="themes-subtitle" variants={cardVariants}>
-            Choose a theme that resonates with your passion for social impact
+            اختر موضوعاً يتناسب مع شغفك للتأثير الاجتماعي
           </motion.p>
           
           <div className="themes-grid">
@@ -121,7 +135,6 @@ const ThemesSection = () => {
                       <h3 className="theme-back-title">{theme.title}</h3>
                     </div>
                     <div className="theme-back-content">
-                      <h4>Project Ideas:</h4>
                       <ul className="theme-examples">
                         {theme.examples.map((example, idx) => (
                           <li key={idx} className="theme-example">
@@ -130,9 +143,6 @@ const ThemesSection = () => {
                           </li>
                         ))}
                       </ul>
-                      <div className="theme-back-footer">
-                        <span>Get creative and make an impact!</span>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -144,8 +154,8 @@ const ThemesSection = () => {
             <div className="note-content">
               <div className="note-icon">💡</div>
               <div className="note-text">
-                <h4>Mix & Match</h4>
-                <p>Feel free to combine themes or propose your own innovative approach to social impact!</p>
+                <h4>امزج ووافق</h4>
+                <p>لا تتردد في دمج الموضوعات أو اقتراح نهجك المبتكر الخاص للتأثير الاجتماعي!</p>
               </div>
             </div>
           </motion.div>

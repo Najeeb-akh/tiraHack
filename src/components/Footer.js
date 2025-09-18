@@ -7,28 +7,16 @@ const Footer = () => {
 
   const socialLinks = [
     {
-      name: 'LinkedIn',
-      icon: '💼',
-      url: 'https://linkedin.com/company/tira-university',
-      color: '#0077B5'
-    },
-    {
       name: 'Instagram',
       icon: '📸',
       url: 'https://instagram.com/tira_hackathon',
       color: '#E4405F'
     },
     {
-      name: 'Twitter',
-      icon: '🐦',
-      url: 'https://twitter.com/tira_hackathon',
-      color: '#1DA1F2'
-    },
-    {
-      name: 'Email',
-      icon: '📧',
-      url: 'mailto:tira.hackathon@university.edu',
-      color: '#EA4335'
+      name: 'Facebook',
+      icon: '📘',
+      url: 'https://facebook.com/tirahackathon',
+      color: '#1877F2'
     }
   ];
 
@@ -116,11 +104,11 @@ const Footer = () => {
                 <div className="event-info">
                   <div className="info-item">
                     <span className="info-icon">📅</span>
-                    <span>March 15, 2025</span>
+                    <span>OCT 11, 2025</span>
                   </div>
                   <div className="info-item">
                     <span className="info-icon">📍</span>
-                    <span>TIRA University Campus</span>
+                    <span>TIRA</span>
                   </div>
                   <div className="info-item">
                     <span className="info-icon">⏰</span>
@@ -143,16 +131,8 @@ const Footer = () => {
                 >
                   Made with <span className="heart">❤️</span> by TIRA Academics
                 </motion.p>
-                <motion.p
-                  className="developer-credit"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                  Developed by <a href="https://gravnix.com" target="_blank" rel="noopener noreferrer" className="developer-link">gravnix.com</a>
-                </motion.p>
                 <p className="copyright">
-                  © {currentYear} TIRA University. All rights reserved.
+                  © {currentYear} TIRA Academics Team. All rights reserved.
                 </p>
               </div>
               
