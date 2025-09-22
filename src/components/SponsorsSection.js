@@ -32,6 +32,7 @@ const SponsorsSection = () => {
     }
   };
 
+  // eslint-disable-next-line no-unused-vars
   const logoVariants = {
     hidden: { scale: 0.8, opacity: 0 },
     visible: {
@@ -46,17 +47,29 @@ const SponsorsSection = () => {
 
   // Sponsors data with package tiers
   const sponsors = [
-    // Gold package
+    // Gold package (5000)
     { 
-      name: 'مطبعة الطيرة', 
-      logo: '/logo.png', 
+      name: 'اكاديمية القاسمي الطيرة', 
+      logo: '/qassimiacademyimage.jpeg', 
       tier: 'gold',
       package: 'Gold Package'
     },
-    // Silver package
     { 
-      name: 'Be', 
-      logo: '/be_logo.png', 
+      name: 'هات', 
+      logo: '/haatlogo.png', 
+      tier: 'gold',
+      package: 'Gold Package'
+    },
+    { 
+      name: 'مطبعة الطيرة 👑', 
+      logo: '/tiraprintlogo.png', 
+      tier: 'gold',
+      package: 'Gold Package'
+    },
+    // Silver package (3500)
+    { 
+      name: 'شام كافيه', 
+      logo: '/shamlogo.png', 
       tier: 'silver',
       package: 'Silver Package'
     },
@@ -67,27 +80,39 @@ const SponsorsSection = () => {
       package: 'Silver Package'
     },
     { 
-      name: 'Sham', 
+      name: 'Be pharm', 
+      logo: '/be_logo.png', 
+      tier: 'silver',
+      package: 'Silver Package'
+    },
+    { 
+      name: 'كمبيوتر الاقصى', 
       logo: '/logo.png', 
       tier: 'silver',
       package: 'Silver Package'
     },
-    // Bronze package
     { 
-      name: 'كمبيوتر الاقصى', 
-      logo: '/logo.png', 
+      name: 'Apex', 
+      logo: '/apex-logo.png', 
+      tier: 'silver',
+      package: 'Silver Package'
+    },
+    // Bronze package (2000)
+    { 
+      name: 'حلويات اخوان سمارة', 
+      logo: '/samara_logo.pdf', 
       tier: 'bronze',
       package: 'Bronze Package'
     },
     { 
-      name: 'مجوهرات ريان', 
+      name: 'مجوهرات الريان', 
       logo: '/rayan_jwelery.jpg', 
       tier: 'bronze',
       package: 'Bronze Package'
     },
     { 
-      name: 'اخوان سمارة', 
-      logo: '/samara_logo.pdf', 
+      name: 'المركز الجماهيري الطيرة', 
+      logo: '/mtnas tiralogo.jpeg', 
       tier: 'bronze',
       package: 'Bronze Package'
     },
@@ -119,10 +144,10 @@ const SponsorsSection = () => {
                   variants={itemVariants}
                   whileHover={{ y: -8 }}
                 >
-                  <div className={`sponsor-logo-circle sponsor-circle-${sponsor.tier}`}>
+                  <div className={`sponsor-logo-circle sponsor-circle-${sponsor.tier} ${sponsor.name === 'مطبعة الطيرة 👑' ? 'loyalty-special' : ''}`}>
                     <img src={sponsor.logo} alt={sponsor.name} className="sponsor-logo" />
                   </div>
-                  <h3 className="sponsor-name">{sponsor.name}</h3>
+                  <h3 className="sponsor-name">{sponsor.name.replace(' 👑', '')}</h3>
                   <p className="sponsor-package">{sponsor.package}</p>
                 </motion.div>
               ))}

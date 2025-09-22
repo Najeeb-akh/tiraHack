@@ -749,10 +749,16 @@
     border-radius: 25px;
   }
   
-  .podium-card.place-1,
-  .podium-card.place-2,
+  .podium-card.place-1 {
+    order: 1;
+  }
+  
+  .podium-card.place-2 {
+    order: 2;
+  }
+  
   .podium-card.place-3 {
-    order: 0;
+    order: 3;
   }
   
   .prize-title {

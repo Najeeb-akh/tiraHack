@@ -35,21 +35,10 @@ const PrizesSection = () => {
 
   const podiumPrizes = [
     {
-      place: 2,
-      title: "المركز الثاني",
-      subtitle: "تميز في الابتكار",
-      prize: "3,000 ₪",
-      icon: "🥈",
-      description: "حل إبداعي متميز مع إمكانية تأثير قوية",
-      color: "var(--primary-indigo)",
-      gradient: "linear-gradient(135deg, var(--primary-indigo), rgba(75, 79, 229, 0.6))",
-      height: "380px"
-    },
-    {
       place: 1,
       title: "المركز الأول",
       subtitle: "أفضل تأثير شامل",
-      prize: "5,000 ₪",
+      prize: "10,000 ₪",
       icon: "🥇",
       description: "الحل ذو التأثير الاجتماعي والابتكار الأكثر شمولية",
       color: "var(--primary-indigo)",
@@ -57,10 +46,21 @@ const PrizesSection = () => {
       height: "420px"
     },
     {
+      place: 2,
+      title: "المركز الثاني",
+      subtitle: "تميز في الابتكار",
+      prize: "6,000 ₪",
+      icon: "🥈",
+      description: "حل إبداعي متميز مع إمكانية تأثير قوية",
+      color: "var(--primary-indigo)",
+      gradient: "linear-gradient(135deg, var(--primary-indigo), rgba(75, 79, 229, 0.6))",
+      height: "380px"
+    },
+    {
       place: 3,
       title: "المركز الثالث",
       subtitle: "تأثير صاعد",
-      prize: "2,000 ₪",
+      prize: "4,000 ₪",
       icon: "🥉",
       description: "حل واعد مع إمكانية عظيمة للتغيير الاجتماعي",
       color: "var(--primary-indigo)",
@@ -93,7 +93,7 @@ const PrizesSection = () => {
             <div className="announcement-card">
               <div className="announcement-icon">💰</div>
               <div className="announcement-content">
-                <h3>مجموع جوائز 10,000 ₪!</h3>
+                <h3>مجموع جوائز 20,000 ₪!</h3>
                 <p>تنافس على جوائز مذهلة وتقدير بينما تصنع تأثيراً إيجابياً على المجتمع!</p>
               </div>
             </div>
