@@ -14,10 +14,10 @@ const ScheduleSection = () => {
     const event = {
       title: 'TiraHack 2025 - هاكاثون الطيرة',
       description: 'انضموا إلينا في هاكاثون طيرة 2025، حيث يلتقي المبدعون والمبرمجون والمصممون وروّاد الأعمال لتطوير حلول مبتكرة تخدم المجتمع.',
-      location: 'Tira',
+      location: 'الطيرة',
       startDate: '20251011T080000', // October 11, 2025 at 8:00 AM
       endDate: '20251011T193000',   // October 11, 2025 at 7:30 PM
-      uid: 'tirahack-2025@tirahack.com'
+      uid: 'tira-hackathon.com'
     };
 
     // Create .ics file content

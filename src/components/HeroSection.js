@@ -40,7 +40,8 @@ const HeroSection = () => {
     const newConfetti = [];
     const centerX = window.innerWidth / 2;
     
-    for (let i = 0; i < 50; i++) {
+    // Reduced number of particles for better performance
+    for (let i = 0; i < 25; i++) {
       // Start from center top with some spread
       const startX = centerX + (Math.random() - 0.5) * 400; // Spread ±200px from center
       // Start from above the screen
@@ -58,16 +59,16 @@ const HeroSection = () => {
         endY: endY,
         rotation: Math.random() * 360,
         scale: Math.random() * 0.5 + 0.5,
-        duration: Math.random() * 3 + 2 // 2-5 seconds
+        duration: Math.random() * 2 + 2 // 2-4 seconds (reduced duration)
       });
     }
     setConfetti(newConfetti);
     setShowConfetti(true);
     
-    // Hide confetti after 10 seconds
+    // Hide confetti after 6 seconds (reduced time)
     setTimeout(() => {
       setShowConfetti(false);
-    }, 10000);
+    }, 6000);
   };
 
   const handleLogoClick = (e) => {

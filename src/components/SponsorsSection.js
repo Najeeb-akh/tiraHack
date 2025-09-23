@@ -87,7 +87,7 @@ const SponsorsSection = () => {
     },
     { 
       name: 'كمبيوتر الاقصى', 
-      logo: '/logo.png', 
+      logo: '/aqsa computer.jpg', 
       tier: 'silver',
       package: 'Silver Package'
     },
@@ -100,7 +100,7 @@ const SponsorsSection = () => {
     // Bronze package (2000)
     { 
       name: 'حلويات اخوان سمارة', 
-      logo: '/samara_logo.pdf', 
+      logo: '/samara_logo.png', 
       tier: 'bronze',
       package: 'Bronze Package'
     },

@@ -33,61 +33,37 @@
   left: calc(var(--col) * 25px);
   top: calc(var(--row) * 25px);
   
-  /* Wave-like positioning */
-  transform: translateY(calc(sin(var(--col) * 0.3) * 30px + cos(var(--row) * 0.2) * 20px));
+  /* Wave-like positioning with hardware acceleration */
+  transform: translate3d(0, calc(sin(var(--col) * 0.3) * 30px + cos(var(--row) * 0.2) * 20px), 0);
   
-  /* Animation */
-  animation: 
-    dotFlow 8s ease-in-out infinite,
-    dotPulse 3s ease-in-out infinite,
-    dotWave 6s ease-in-out infinite;
+  /* Simplified animation - single keyframe for better performance */
+  animation: dotFloat 8s ease-in-out infinite;
   animation-delay: var(--delay);
   
+  /* Hardware acceleration */
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  
   /* Size variation based on position */
-  width: calc(6px + (var(--row) / 25) * 4px);
-  height: calc(6px + (var(--row) / 25) * 4px);
+  width: calc(6px + (var(--row) / 15) * 4px);
+  height: calc(6px + (var(--row) / 15) * 4px);
   
   /* Opacity variation for depth */
-  opacity: calc(0.3 + (var(--col) / 40) * 0.7);
+  opacity: calc(0.3 + (var(--col) / 25) * 0.7);
 }
 
-/* Flow animation - creates the wave movement */
-@keyframes dotFlow {
+/* Optimized single animation for better performance */
+@keyframes dotFloat {
   0%, 100% {
-    transform: translateY(calc(sin(var(--col) * 0.3) * 30px + cos(var(--row) * 0.2) * 20px))
-               translateX(0px);
-  }
-  25% {
-    transform: translateY(calc(sin(var(--col) * 0.3 + 1) * 35px + cos(var(--row) * 0.2 + 0.5) * 25px))
-               translateX(calc(sin(var(--row) * 0.1) * 15px));
+    transform: translate3d(0, calc(sin(var(--col) * 0.3) * 30px + cos(var(--row) * 0.2) * 20px), 0)
+               scale(1);
+    opacity: calc(0.3 + (var(--col) / 25) * 0.7);
   }
   50% {
-    transform: translateY(calc(sin(var(--col) * 0.3 + 2) * 40px + cos(var(--row) * 0.2 + 1) * 30px))
-               translateX(calc(sin(var(--row) * 0.1 + 1) * 20px));
-  }
-  75% {
-    transform: translateY(calc(sin(var(--col) * 0.3 + 1.5) * 35px + cos(var(--row) * 0.2 + 0.75) * 25px))
-               translateX(calc(sin(var(--row) * 0.1 + 0.5) * 10px));
-  }
-}
-
-/* Pulse animation - creates size variation */
-@keyframes dotPulse {
-  0%, 100% {
-    transform: scale(1) translateY(calc(sin(var(--col) * 0.3) * 30px + cos(var(--row) * 0.2) * 20px));
-  }
-  50% {
-    transform: scale(1.2) translateY(calc(sin(var(--col) * 0.3) * 30px + cos(var(--row) * 0.2) * 20px));
-  }
-}
-
-/* Wave animation - creates the flowing effect */
-@keyframes dotWave {
-  0%, 100% {
-    opacity: calc(0.3 + (var(--col) / 40) * 0.7);
-  }
-  50% {
-    opacity: calc(0.1 + (var(--col) / 40) * 0.9);
+    transform: translate3d(calc(sin(var(--row) * 0.1) * 15px), 
+                          calc(sin(var(--col) * 0.3 + 1) * 35px + cos(var(--row) * 0.2 + 0.5) * 25px), 0)
+               scale(1.1);
+    opacity: calc(0.5 + (var(--col) / 25) * 0.5);
   }
 }
 

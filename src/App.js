@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import SponsorsSection from './components/SponsorsSection';
@@ -10,10 +10,13 @@ import Footer from './components/Footer';
 import FloatingElements from './components/FloatingElements';
 import './App.css';
 
+// Memoize the FloatingElements component to prevent unnecessary re-renders
+const MemoizedFloatingElements = memo(FloatingElements);
+
 function App() {
   return (
     <div className="App">
-      <FloatingElements />
+      <MemoizedFloatingElements />
       <HeroSection />
       <AboutSection />
       <SponsorsSection />
